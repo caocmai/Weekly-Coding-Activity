@@ -9,7 +9,7 @@ public class App {
 		MemorySize ms = new MemorySize();
 		System.out.println(ms.actualMemorySize("32GB"));
 		System.out.println(ms.actualMemorySize("2GB"));
-		System.out.println(ms.actualMemorySize("512GB"));
+		System.out.println(ms.actualMemorySize("512MB"));
 		/* Console Output
 		 * 29.76GB
 		 * 1.86GB

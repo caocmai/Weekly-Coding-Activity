@@ -12,7 +12,7 @@ public class MemorySize {
 	    if (type.equals("MB")) {
 	      return String.valueOf(Math.round(actualSize)) + type;
 	    } 
-	  
+
 	    return String.format("%.2f", actualSize) + type;
 	  }
 
