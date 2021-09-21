@@ -1,34 +1,24 @@
 package dev.cao.models;
 
 public class MemorySize {
-	
+
 	public String actualMemorySize(String size) {
-	    String type = size.substring(size.length()-2);
-	    String amount = size.substring(0, size.length()-2);
-	    
-	    double intAmount = Double.parseDouble(amount);
-	    double actualSize = intAmount * .93;
+		int stringSize = size.length();
+		String type = size.substring(stringSize-2, stringSize-1);
+		String amount = size.substring(0, stringSize-2);
 
-	    if (type.equals("MB")) {
-	      return String.valueOf(Math.round(actualSize)) + type;
-	    }
-	    
-	    if (actualSize <= 1) {
-	    	String returnType = "";
-	    	switch (type) {
-				case "TB":
-					returnType = "GB";
-					break;
-				case "GB":
-					returnType = "MB";
-					break;
-				default:
-					break;
-			}
-	    	return String.valueOf(Math.round(actualSize * 1000)) + returnType;
-	    }
+		double intAmount = Double.parseDouble(amount);
+		double actualSize = intAmount * .93;
+		
+		String sizes = "KMGTP";
+		int index = sizes.indexOf(type);
+		
+		if (actualSize <= 1 && index > 1) {
+			char returnType = sizes.charAt(index-1);
+			return String.valueOf(Math.round(actualSize * 1000)) + String.valueOf(returnType) + "B";
+		}
 
-	    return String.format("%.2f", actualSize) + type;
-	  }
+		return String.format("%.2f", actualSize) + type + "B";
+	}
 
 }
