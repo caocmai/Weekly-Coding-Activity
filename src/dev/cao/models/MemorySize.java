@@ -5,7 +5,7 @@ public class MemorySize {
 	public String actualMemorySize(String size) {
 	    String type = size.substring(size.length()-2);
 	    String amount = size.substring(0, size.length()-2);
-	    int intAmount = Integer.parseInt(amount);
+	    double intAmount = Double.parseDouble(amount);
 	    
 	    double actualSize = intAmount * .93;
 
@@ -13,7 +13,11 @@ public class MemorySize {
 	      return String.valueOf(Math.round(actualSize)) + type;
 	    }
 	    
-	    if (actualSize <= 1) {
+	    if (actualSize <= 1 && type.equals("TB")) {
+	    	return String.valueOf(Math.round(actualSize * 1000)) + "GB";
+	    }
+	    
+	    if (actualSize <= 1 && type.equals("GB")) {
 	    	return String.valueOf(Math.round(actualSize * 1000)) + "MB";
 	    }
 
