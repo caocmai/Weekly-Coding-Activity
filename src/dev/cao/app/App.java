@@ -13,7 +13,7 @@ public class App {
 		/* Console Output
 		 * 29.76GB
 		 * 1.86GB
-		 * 476.16MB
+		 * 476MB
 		 */
 		
 	}
