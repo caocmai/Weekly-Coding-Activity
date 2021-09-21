@@ -10,7 +10,10 @@ public class App {
 		System.out.println(ms.actualMemorySize("32GB"));
 		System.out.println(ms.actualMemorySize("2GB"));
 		System.out.println(ms.actualMemorySize("512MB"));
+		System.out.println(ms.actualMemorySize("113GB"));
+		System.out.println(ms.actualMemorySize("1KB"));
 		System.out.println(ms.actualMemorySize("1GB"));
+
 		/* Console Output
 		 * 29.76GB
 		 * 1.86GB
