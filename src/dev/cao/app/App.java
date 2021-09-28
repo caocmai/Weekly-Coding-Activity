@@ -1,6 +1,7 @@
 package dev.cao.app;
 
 import dev.cao.models.MemorySize;
+import dev.cao.models.SwapNumber;
 
 public class App {
 	
@@ -20,6 +21,10 @@ public class App {
 		 * 476MB
 		 * 930MB
 		 */
+		Integer x = 4;
+		Integer y = 6;
+		System.out.println("x: " + x + " y: " + y);
+		SwapNumber.swapNumber(x, y);
 	}
 	
 
